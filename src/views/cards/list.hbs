@@ -1,0 +1,27 @@
+    <div class="row">
+        {{#each cards}}
+        <div class="col-sm-12 col-md-6 col-lg-4">
+        <div class="card">
+          <span class="title-card">{{name}}</span>
+           <img class="img-card" src={{img_url}}/>
+           <span class="desctription-card">{{description}}</span>
+                <a id="copy-{{id}}" class="display-none">{{app_url_copy}}{{id}}</a>
+                <a class="btn btn-primary" onclick="copiarAlPortapapeles('copy-{{id}}')"> Share </a>
+                <a class="btn btn-secondary" href="/cards/edit/{{id}}"> Edit </a>
+                <a class="btn btn-danger" href="/cards/delete/{{id}}" onclick="return confirm('Are you sure you want to delete this card?');"> Delete </a>
+            </div>
+        </div>
+        {{else}}
+        <div class="col-md-4 mx-auto">
+            <div class="card card-body text-center">
+                <p>There are not cards saved yet.</p>
+                <a href="/cards/add">Create One!</a>
+            </div>
+        </div>
+        {{/each}}
+
+    </div>
+
+
+
+
